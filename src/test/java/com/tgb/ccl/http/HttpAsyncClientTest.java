@@ -101,7 +101,7 @@ public class HttpAsyncClientTest {
 		System.out.println("-----------测试下载-------------------");
 		url="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/logo_white_fe6da1ec.png";
 		try {
-			FileOutputStream out = new FileOutputStream(new File("d://aaa//0.png"));
+			FileOutputStream out = new FileOutputStream(new File("//Users//gengcheng//aaa//0.png"));
 			HttpAsyncClientUtil.down(HttpConfig.custom().url(url).handler(handler).out(out));
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -152,7 +152,7 @@ public class HttpAsyncClientTest {
 	            handler.setCountDownLatch(countDownLatch);
 	            for(int i = 0; i< pagecount*10;i++){
 	            	CloseableHttpAsyncClient client= HACB.custom().timeout(10000).proxy("127.0.0.1", 8087).ssl().build();
-	            	FileOutputStream out = new FileOutputStream(new File("d://aaa//"+(i+1)+".png"));
+	            	FileOutputStream out = new FileOutputStream(new File("//Users/gengcheng//aaa//"+(i+1)+".png"));
 	                //启动线程抓取
 	                executors.execute(new GetRunnable(HttpConfig.custom().url(urls[i%pagecount]).headers(headers).handler(handler)));
 	                executors.execute(new GetRunnable(HttpConfig.custom().asynclient(client).url(imgurls[i%2]).headers(headers).out(out).handler(handler)));
@@ -193,7 +193,7 @@ public class HttpAsyncClientTest {
 	    }  
 	
 	public static void main(String[] args) throws Exception {
-		File file = new File("d://aaa");
+		File file = new File("//Users//gengcheng//aaa");
 		if(!file.exists() && file.isDirectory()){
 			file.mkdir();
 		}

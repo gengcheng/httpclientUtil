@@ -19,239 +19,243 @@ import com.tgb.ccl.http.httpclient.HttpAsyncClientUtil.IHandler;
  * @version 1.0 
  */
 public class HttpConfig {
-	
-	private HttpConfig(){};
-	
-	/**
-	 * 获取实例
-	 * @return
-	 */
-	public static HttpConfig custom(){
-		return new HttpConfig();
-	}
 
-	/**
-	 * HttpClient对象
-	 */
-	private HttpClient client;
+  private HttpConfig() {
+  }
 
-	/**
-	 * CloseableHttpAsyncClient对象
-	 */
-	private CloseableHttpAsyncClient asynclient;
-	
-	/**
-	 * 资源url
-	 */
-	private String url;
+  ;
 
-	/**
-	 * Header头信息
-	 */
-	private Header[] headers;
+  /**
+   * 获取实例
+   *
+   * @return
+   */
+  public static HttpConfig custom() {
+    return new HttpConfig();
+  }
 
-	/**
-	 * 请求方法
-	 */
-	private HttpMethods method=HttpMethods.GET;
-	
-	/**
-	 * 请求方法名称
-	 */
-	private String methodName;
+  /**
+   * HttpClient对象
+   */
+  private HttpClient client;
 
-	/**
-	 * 用于cookie操作
-	 */
-	private HttpContext context;
+  /**
+   * CloseableHttpAsyncClient对象
+   */
+  private CloseableHttpAsyncClient asynclient;
 
-	/**
-	 * 传递参数
-	 */
-	private Map<String, Object> map;
+  /**
+   * 资源url
+   */
+  private String url;
 
-	/**
-	 * 输入输出编码
-	 */
-	private String encoding=Charset.defaultCharset().displayName();
+  /**
+   * Header头信息
+   */
+  private Header[] headers;
 
-	/**
-	 * 输入编码
-	 */
-	private String inenc;
+  /**
+   * 请求方法
+   */
+  private HttpMethods method = HttpMethods.GET;
 
-	/**
-	 * 输出编码
-	 */
-	private String outenc;
-	
-	/**
-	 * 输出流对象
-	 */
-	private OutputStream out;
-	
-	/**
-	 * 异步操作回调执行器
-	 */
-	private IHandler handler;
+  /**
+   * 请求方法名称
+   */
+  private String methodName;
 
-	/**
-	 * HttpClient对象
-	 */
-	public HttpConfig client(HttpClient client) {
-		this.client = client;
-		return this;
-	}
-	
-	/**
-	 * CloseableHttpAsyncClient对象
-	 */
-	public HttpConfig asynclient(CloseableHttpAsyncClient asynclient) {
-		this.asynclient = asynclient;
-		return this;
-	}
-	
-	/**
-	 * 资源url
-	 */
-	public HttpConfig url(String url) {
-		this.url = url;
-		return this;
-	}
-	
-	/**
-	 * Header头信息
-	 */
-	public HttpConfig headers(Header[] headers) {
-		this.headers = headers;
-		return this;
-	}
-	
-	/**
-	 * 请求方法
-	 */
-	public HttpConfig method(HttpMethods method) {
-		this.method = method;
-		return this;
-	}
-	
-	/**
-	 * 请求方法
-	 */
-	public HttpConfig methodName(String methodName) {
-		this.methodName = methodName;
-		return this;
-	}
-	
-	/**
-	 * cookie操作相关
-	 */
-	public HttpConfig context(HttpContext context) {
-		this.context = context;
-		return this;
-	}
-	
-	/**
-	 * 传递参数
-	 */
-	public HttpConfig map(Map<String, Object> map) {
-		this.map = map;
-		return this;
-	}
-	
-	/**
-	 * 输入输出编码
-	 */
-	public HttpConfig encoding(String encoding) {
-		//设置输入输出
-		inenc(encoding);
-		outenc(encoding);
-		this.encoding = encoding;
-		return this;
-	}
-	
-	/**
-	 * 输入编码
-	 */
-	public HttpConfig inenc(String inenc) {
-		this.inenc = inenc;
-		return this;
-	}
-	
-	/**
-	 * 输出编码
-	 */
-	public HttpConfig outenc(String outenc) {
-		this.outenc = outenc;
-		return this;
-	}
-	
-	/**
-	 * 输出流对象
-	 */
-	public HttpConfig out(OutputStream out) {
-		this.out = out;
-		return this;
-	}
-	
-	/**
-	 * 异步操作回调执行器
-	 */
-	public HttpConfig handler(IHandler handler) {
-		this.handler = handler;
-		return this;
-	}
+  /**
+   * 用于cookie操作
+   */
+  private HttpContext context;
+
+  /**
+   * 传递参数
+   */
+  private Map<String, Object> map;
+
+  /**
+   * 输入输出编码
+   */
+  private String encoding = Charset.defaultCharset().displayName();
+
+  /**
+   * 输入编码
+   */
+  private String inenc;
+
+  /**
+   * 输出编码
+   */
+  private String outenc;
+
+  /**
+   * 输出流对象
+   */
+  private OutputStream out;
+
+  /**
+   * 异步操作回调执行器
+   */
+  private IHandler handler;
+
+  /**
+   * HttpClient对象
+   */
+  public HttpConfig client(HttpClient client) {
+    this.client = client;
+    return this;
+  }
+
+  /**
+   * CloseableHttpAsyncClient对象
+   */
+  public HttpConfig asynclient(CloseableHttpAsyncClient asynclient) {
+    this.asynclient = asynclient;
+    return this;
+  }
+
+  /**
+   * 资源url
+   */
+  public HttpConfig url(String url) {
+    this.url = url;
+    return this;
+  }
+
+  /**
+   * Header头信息
+   */
+  public HttpConfig headers(Header[] headers) {
+    this.headers = headers;
+    return this;
+  }
+
+  /**
+   * 请求方法
+   */
+  public HttpConfig method(HttpMethods method) {
+    this.method = method;
+    return this;
+  }
+
+  /**
+   * 请求方法
+   */
+  public HttpConfig methodName(String methodName) {
+    this.methodName = methodName;
+    return this;
+  }
+
+  /**
+   * cookie操作相关
+   */
+  public HttpConfig context(HttpContext context) {
+    this.context = context;
+    return this;
+  }
+
+  /**
+   * 传递参数
+   */
+  public HttpConfig map(Map<String, Object> map) {
+    this.map = map;
+    return this;
+  }
+
+  /**
+   * 输入输出编码
+   */
+  public HttpConfig encoding(String encoding) {
+    //设置输入输出
+    inenc(encoding);
+    outenc(encoding);
+    this.encoding = encoding;
+    return this;
+  }
+
+  /**
+   * 输入编码
+   */
+  public HttpConfig inenc(String inenc) {
+    this.inenc = inenc;
+    return this;
+  }
+
+  /**
+   * 输出编码
+   */
+  public HttpConfig outenc(String outenc) {
+    this.outenc = outenc;
+    return this;
+  }
+
+  /**
+   * 输出流对象
+   */
+  public HttpConfig out(OutputStream out) {
+    this.out = out;
+    return this;
+  }
+
+  /**
+   * 异步操作回调执行器
+   */
+  public HttpConfig handler(IHandler handler) {
+    this.handler = handler;
+    return this;
+  }
 
 
-	public HttpClient client() {
-		return client;
-	}
-	
-	public CloseableHttpAsyncClient asynclient() {
-		return asynclient;
-	}
-	
-	public Header[] headers() {
-		return headers;
-	}
-	
-	public String url() {
-		return url;
-	}
+  public HttpClient client() {
+    return client;
+  }
 
-	public HttpMethods method() {
-		return method;
-	}
+  public CloseableHttpAsyncClient asynclient() {
+    return asynclient;
+  }
 
-	public String methodName() {
-		return methodName;
-	}
+  public Header[] headers() {
+    return headers;
+  }
 
-	public HttpContext context() {
-		return context;
-	}
+  public String url() {
+    return url;
+  }
 
-	public Map<String, Object> map() {
-		return map;
-	}
+  public HttpMethods method() {
+    return method;
+  }
 
-	public String encoding() {
-		return encoding;
-	}
+  public String methodName() {
+    return methodName;
+  }
 
-	public String inenc() {
-		return inenc == null ? encoding : inenc;
-	}
+  public HttpContext context() {
+    return context;
+  }
 
-	public String outenc() {
-		return outenc == null ? encoding : outenc;
-	}
-	
-	public OutputStream out() {
-		return out;
-	}
-	
-	public IHandler handler() {
-		return handler;
-	}
+  public Map<String, Object> map() {
+    return map;
+  }
+
+  public String encoding() {
+    return encoding;
+  }
+
+  public String inenc() {
+    return inenc == null ? encoding : inenc;
+  }
+
+  public String outenc() {
+    return outenc == null ? encoding : outenc;
+  }
+
+  public OutputStream out() {
+    return out;
+  }
+
+  public IHandler handler() {
+    return handler;
+  }
 }
