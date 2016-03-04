@@ -160,8 +160,8 @@ public class HttpClientTest {
     if (!file.exists() && file.isDirectory()) {
       file.mkdir();
     }
-//		testOne();
-    testMutilTask();
+		testOne();
+//    testMutilTask();
   }
 
   @Test
